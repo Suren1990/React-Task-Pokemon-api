@@ -68,7 +68,7 @@ const Pokemon = () => {
                                                 className='product__stats_stat'
                                                 key={moveItem.move.name}
                                             >
-                                                {moveItem.move.name}
+                                                {moveItem.move.name},
                                             </span>
                                         ))
                                     }
