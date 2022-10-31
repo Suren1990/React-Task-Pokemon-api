@@ -6,17 +6,12 @@ import { useGetAllPokemonsQuery } from "../../services/PokemonService";
 import './PokemonList.css';
 
 const PokemonList = () => {
-    const [searchPokemon, setSearchPokemon] = useState('');
-
     const { isLoading, isError, data } = useGetAllPokemonsQuery();
 
     return (
         <div>
             <h1 className='pokemon__list_title'>PokemonList</h1>
-            <PokemonSearch
-                searchPokemon={searchPokemon}
-                setSearchPokemon={setSearchPokemon}
-            />
+            <PokemonSearch />
             <hr />
             <div className='pokemon__list'>
                 {isError && <h2>Something went wrong!!</h2>}

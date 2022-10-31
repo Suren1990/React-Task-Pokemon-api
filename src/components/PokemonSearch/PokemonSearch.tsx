@@ -4,12 +4,8 @@ import Loading from "../Loading/Loading";
 import PokemonItem from "../PokemonItem/PokemonItem";
 import './PokemonSearch.css';
 
-interface PokemonSearchProps {
-    searchPokemon: string;
-    setSearchPokemon: (name: string) => void;
-}
-
-const PokemonSearch: React.FC<PokemonSearchProps> = ({ searchPokemon, setSearchPokemon }) => {
+const PokemonSearch = () => {
+    const [searchPokemon, setSearchPokemon] = useState('');
     const [debounced, setDebounced] = useState('');
 
     const { isLoading, isError, data } = useGetPokemonByNameQuery(debounced, {
