@@ -1,5 +1,4 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { useGetPokemonByNameQuery } from "../../services/PokemonService";
 import Loading from "../Loading/Loading";
 import PokemonItem from "../PokemonItem/PokemonItem";
@@ -20,7 +19,7 @@ const PokemonSearch: React.FC<PokemonSearchProps> = ({ searchPokemon, setSearchP
     useEffect(() => {
         let handler: ReturnType<typeof setTimeout>;
 
-        if (searchPokemon.length > 3) {
+        if (searchPokemon.length > 2) {
             handler = setTimeout(() => setDebounced(searchPokemon), 1000);
         }
 
