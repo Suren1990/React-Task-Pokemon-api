@@ -1,4 +1,4 @@
-import './Pokemon.css';
+import './Pokemon.scss';
 import { useNavigate, useParams } from "react-router-dom";
 import { useGetPokemonByNameQuery } from '../../services/PokemonService';
 import Loading from '../../components/Loading/Loading';

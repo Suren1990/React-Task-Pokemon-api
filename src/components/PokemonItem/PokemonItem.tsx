@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { useGetPokemonByNameQuery } from '../../services/PokemonService';
 import Loading from '../Loading/Loading';
-import './PokemonItem.css';
+import './PokemonItem.scss';
+import noImage from '../../assets/images/noimage.png';
 
 interface PokemonItemProps {
     name: string;
@@ -22,7 +23,7 @@ const PokemonItem: React.FC<PokemonItemProps> = ({ name }) => {
                     <>
                         <span className='pokemon__image_wrap'>
                             <img
-                                src={data.sprites.other.home.front_default}
+                                src={data.sprites.other.home.front_default || noImage }
                                 className="pokemon__image"
                                 alt={name}
                             />

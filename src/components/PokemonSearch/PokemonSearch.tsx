@@ -1,8 +1,8 @@
+import './PokemonSearch.scss';
 import { ChangeEvent, useEffect, useState } from "react";
 import { useGetPokemonByNameQuery } from "../../services/PokemonService";
 import Loading from "../Loading/Loading";
 import PokemonItem from "../PokemonItem/PokemonItem";
-import './PokemonSearch.css';
 
 const PokemonSearch = () => {
     const [searchPokemon, setSearchPokemon] = useState('');
