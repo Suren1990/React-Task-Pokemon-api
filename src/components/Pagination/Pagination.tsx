@@ -8,8 +8,9 @@ interface PaginationProps {
 }
 
 const Pagination: React.FC<PaginationProps> = ({ count, limit, changePage }) => {
+    const pagesArr = [0]
     const [activePage, setActivePage] = useState(0);
-    const [pagesCount, setPagesCount] = useState([0]);
+    const [pagesCount, setPagesCount] = useState<Array<number>>([]);
 
     const currentPage = (index: number, page: number) => {
         setActivePage(index);
@@ -19,10 +20,9 @@ const Pagination: React.FC<PaginationProps> = ({ count, limit, changePage }) => 
     useEffect(() => {
         if (count) {
             for (let i = 1; i < count / limit; i++) {
-                setPagesCount((prev) => {
-                    return [...prev, i * limit];
-                })
+                pagesArr.push(i * limit);
             }
+            setPagesCount(pagesArr)
         } 
     }, [count, limit]);
 
